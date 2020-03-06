@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Art-Template</title>
+    <script type="text/javascript" src="../template/src/template-web.js"></script>
+</head>
+
+<body>
+    <div id="content"></div>
+
+    <script id="data-tpl" type="text/html">
+     {{if isAdmin}}
+    <h1>{{title}}</h1>
+    <ul>
+        {{each list}}
+            <li>索引{{$index+1}}:{{$value}}</li>
+        {{/each}}
+    </ul>
+    {{/if}}
+    {{$data['title']}}
+    </script>
+
+<script type="text/javascript" src="../template/test.js"></script>
+</body>
+<!-- <script>
+    var data = {
+        title: '标签',
+        list: ['喜剧', '爱情', '动作', '科幻'],
+        isAdmin: true
+    }
+    var html = template('data-tpl', data)
+    document.getElementById('content').innerHTML = html
+</script> -->
+
+</html>
+
